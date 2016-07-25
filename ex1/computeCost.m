@@ -16,6 +16,16 @@ J = 0;
 
 
 
+H = X * theta; % multiply (mx2) matrix X with (2x1) vector theta, giving a (mx1) vector H
+delta = H - y; 
+deltaSquared = delta .^ 2;
+onesMatrix = ones(1,m);
+sumOfSquaredErrors = onesMatrix * deltaSquared;
+J = sumOfSquaredErrors/(2*m);
+
+% print cost to screen
+fprintf('Cost computed: ');
+fprintf('%f \n', J);
 
 % =========================================================================
 
